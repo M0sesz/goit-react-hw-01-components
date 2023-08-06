@@ -6,7 +6,10 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
+export const Title = styled.h2`
+  text-align: center;
+  margin-bottom: 15px;
+`;
 export const StatisticsSection = styled.section`
   margin-top: 100px;
   background-color: #fff;

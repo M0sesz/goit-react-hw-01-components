@@ -1,9 +1,9 @@
-import { StatisticsSection, StatisticsLi } from './Stats.styled';
+import { StatisticsSection, StatisticsLi, Title } from './Stats.styled';
 import PropTypes from 'prop-types';
-export const Stats = ({ data }) => {
+export const Stats = ({ data, title }) => {
   return (
     <StatisticsSection>
-      <h2>Upload stats</h2>
+      {title && <Title>{title}</Title>}
       <ul>
         {data.map(({ id, label, percentage }) => {
           return (
