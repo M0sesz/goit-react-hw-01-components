@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import logoMillion from '../assets/12345.png';
+import vnu from '../assets/vnu.png';
 
 export default function Start({ setUsername }) {
   const nameRef = useRef();
@@ -19,7 +21,9 @@ export default function Start({ setUsername }) {
 
   return (
     <div className="full">
-      {/* <img src="./12345.jpg" alt="logo" /> */}
+      <div className="logoContainer">
+        <img src={logoMillion} alt="My Image" className="logoStart" />
+      </div>
       <div className="start">
         <input
           className="startInput"

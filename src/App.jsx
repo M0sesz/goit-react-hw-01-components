@@ -1,8 +1,8 @@
 import './App.css';
 import { useEffect, useMemo, useState } from 'react';
-import Start from './components/Start';
+import Start from './components/Form';
 import Timer from './components/Timer';
-import Trivia from './components/Trivia';
+import Trivia from './components/Questions';
 import axios from 'axios';
 
 function App() {
