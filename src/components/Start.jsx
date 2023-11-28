@@ -19,7 +19,7 @@ export default function Start({ setUsername }) {
 
   return (
     <div className="full">
-      <img src="../assets/12345.jpg" />
+      {/* <img src="./12345.jpg" alt="logo" /> */}
       <div className="start">
         <input
           className="startInput"
