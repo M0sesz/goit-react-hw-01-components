@@ -21,10 +21,8 @@ export default function Start({ setUsername }) {
 
   return (
     <div className="full">
-      <div className="logoContainer">
-        <img src={logoMillion} alt="My Image" className="logoStart" />
-      </div>
       <div className="start">
+        <img src={logoMillion} alt="My Image" className="logoStart" />
         <input
           className="startInput"
           placeholder="Введіть ваше ім'я"
