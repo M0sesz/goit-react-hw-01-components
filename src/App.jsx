@@ -11,6 +11,7 @@ function App() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [earned, setEarned] = useState('₴ 0');
   const [questionsData, setQuestionsData] = useState(null);
+  const [usedQuestionIds, setUsedQuestionIds] = useState([]);
 
   const moneyPyramid = useMemo(
     () => [
@@ -40,22 +41,27 @@ function App() {
           'https://65638255ee04015769a750ec.mockapi.io/api/million/questions'
         );
 
-        // Розділіть питання на рівні важкості
-        const easyQuestions = response.data.filter(
-          question => question.level === 'easy'
-        );
-        const mediumQuestions = response.data.filter(
-          question => question.level === 'medium'
-        );
-        const hardQuestions = response.data.filter(
-          question => question.level === 'hard'
-        );
+        // Filter out used questions
+        const filteredQuestions = response.data.filter(question => {
+          // Check if question ID is not used
+          return !usedQuestionIds.includes(question.id);
+        });
 
-        // З'єднайте питання згідно з вашими вимогами
+        // Shuffle and slice questions based on difficulty
+        const easyQuestions = shuffleArray(
+          filteredQuestions.filter(q => q.level === 'easy')
+        ).slice(0, 5);
+        const mediumQuestions = shuffleArray(
+          filteredQuestions.filter(q => q.level === 'medium')
+        ).slice(0, 5);
+        const hardQuestions = shuffleArray(
+          filteredQuestions.filter(q => q.level === 'hard')
+        ).slice(0, 5);
+
         const sortedQuestions = [
-          ...easyQuestions.slice(0, 5),
-          ...mediumQuestions.slice(0, 5),
-          ...hardQuestions.slice(0, 5),
+          ...easyQuestions,
+          ...mediumQuestions,
+          ...hardQuestions,
         ];
 
         setQuestionsData(sortedQuestions);
@@ -65,12 +71,41 @@ function App() {
     };
 
     fetchQuestions();
-  }, []);
+  }, [usedQuestionIds]);
+
+  function shuffleArray(array) {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray;
+  }
 
   useEffect(() => {
     questionNumber > 1 &&
       setEarned(moneyPyramid.find(m => m.id === questionNumber - 1).amount);
   }, [questionNumber, moneyPyramid]);
+
+  const handleQuestionAnswered = (questionId, selectedAnswer) => {
+    // Update used question IDs
+    setUsedQuestionIds(prevIds => [...prevIds, questionId]);
+
+    // Find the answered question object
+    const answeredQuestion = questionsData.find(q => q.id === questionId);
+
+    // Check if the answer is correct
+    if (selectedAnswer === answeredQuestion.correctAnswer) {
+      // Increase question number for next round
+      setQuestionNumber(prev => prev + 1);
+    } else {
+      // End the game if answer is incorrect
+      setTimeOut(true);
+    }
+  };
 
   return (
     <div className="app">
@@ -97,6 +132,7 @@ function App() {
                     questionNumber={questionNumber}
                     setQuestionNumber={setQuestionNumber}
                     setTimeOut={setTimeOut}
+                    onQuestionAnswered={handleQuestionAnswered}
                   />
                 </div>
               </>
