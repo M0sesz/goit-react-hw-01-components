@@ -19,6 +19,8 @@ const Trivia = ({
   const [letsPlay] = useSound(play);
   const [correctAnswer] = useSound(correct);
   const [wrongAnswer] = useSound(wrong);
+  const [isCongratulationsModalOpen, setIsCongratulationsModalOpen] =
+    useState(false);
 
   const getRandomQuestion = useCallback(() => {
     // Шукаємо питання, які не були використані
@@ -67,6 +69,11 @@ const Trivia = ({
     }, duration);
   };
 
+  const handleModalClose = () => {
+    setIsCongratulationsModalOpen(false);
+    // Ваша додаткова логіка при закритті модалки, якщо потрібна
+  };
+
   const handleClick = a => {
     if (isQuestionDisplayed) {
       setSelectedAnswer(a);
@@ -80,8 +87,8 @@ const Trivia = ({
           correctAnswer();
           delay(1000, () => {
             if (questionNumber === data.length - 2) {
-              console.log('Congrats! You won 500,000!');
               setQuestionNumber(data.length); // Це встановлює questionNumber на довжину даних, щоб показати останнє питання
+              setIsCongratulationsModalOpen(true); // Відкриваємо модалку на передостанньому питанні
             } else if (isLastQuestion) {
               onComplete();
             } else {
@@ -104,7 +111,7 @@ const Trivia = ({
         <CongratulationsModal
           isOpen={true}
           earned="Ваш виграш"
-          onRequestClose={() => {}}
+          onRequestClose={handleModalClose}
         />
       ) : (
         <>

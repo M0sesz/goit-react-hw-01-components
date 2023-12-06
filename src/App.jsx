@@ -28,8 +28,8 @@ function App() {
       { id: 5, amount: '₴ 1.000' },
       { id: 4, amount: '₴ 500' },
       { id: 3, amount: '₴ 300' },
-      { id: 2, amount: '₴ 200' },
-      { id: 1, amount: '₴ 100' },
+      { id: 2, amount: '₴ 100' },
+      { id: 1, amount: '₴ 50' },
     ],
     []
   );
@@ -91,7 +91,7 @@ function App() {
   }, [questionNumber, moneyPyramid]);
 
   const handleQuestionAnswered = (questionId, selectedAnswer) => {
-    // Update used question IDs
+    // Update used question IDs1
     setUsedQuestionIds(prevIds => [...prevIds, questionId]);
 
     // Find the answered question object
