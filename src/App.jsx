@@ -39,7 +39,26 @@ function App() {
         const response = await axios.get(
           'https://65638255ee04015769a750ec.mockapi.io/api/million/questions'
         );
-        setQuestionsData(response.data);
+
+        // Розділіть питання на рівні важкості
+        const easyQuestions = response.data.filter(
+          question => question.level === 'easy'
+        );
+        const mediumQuestions = response.data.filter(
+          question => question.level === 'medium'
+        );
+        const hardQuestions = response.data.filter(
+          question => question.level === 'hard'
+        );
+
+        // З'єднайте питання згідно з вашими вимогами
+        const sortedQuestions = [
+          ...easyQuestions.slice(0, 5),
+          ...mediumQuestions.slice(0, 5),
+          ...hardQuestions.slice(0, 5),
+        ];
+
+        setQuestionsData(sortedQuestions);
       } catch (error) {
         console.error('Error fetching questions:', error);
       }
