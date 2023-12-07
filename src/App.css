@@ -169,8 +169,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh; /* або інше значення, відповідне до вашого дизайну */
-  padding-top: 100px;
+  padding-top: 340px;
 }
 
 .full {

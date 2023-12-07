@@ -24,7 +24,9 @@ const CongratulationsModal = ({ isOpen, earned, onRequestClose }) => (
     }}
   >
     <h2>Вітаємо!</h2>
-    <p>Ви завершили гру та відповіли на всі питання та заробили {earned} !.</p>
+    <p>
+      Ви завершили гру та відповіли на всі питання та заробили ₴ 1.000.000 !
+    </p>
     <button
       style={{
         padding: '10px',
