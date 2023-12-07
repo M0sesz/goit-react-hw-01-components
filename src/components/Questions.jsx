@@ -23,28 +23,21 @@ const Trivia = ({
     useState(false);
 
   const getRandomQuestion = useCallback(() => {
-    // Шукаємо питання, які не були використані
     const availableQuestions = data.filter(q => !q.used);
 
-    // Якщо всі питання були використані, повертаємо null
     if (availableQuestions.length === 0) {
       return null;
     }
 
-    // Вибираємо випадкове питання
     const randomIndex = Math.floor(Math.random() * availableQuestions.length);
     const randomQuestion = availableQuestions[randomIndex];
 
-    // Позначаємо питання як використане
     randomQuestion.used = true;
 
     return randomQuestion;
   }, [data]);
 
-  const isLastQuestion = questionNumber === data.length;
-
   useEffect(() => {
-    // Отримуємо випадкове питання
     const newQuestion = getRandomQuestion();
 
     if (newQuestion) {
@@ -54,7 +47,7 @@ const Trivia = ({
 
       setIsQuestionDisplayed(true);
     } else {
-      console.log('All questions used'); // Виводимо повідомлення в консоль
+      console.log('All questions used');
       setTimeOut(true);
     }
   }, [questionNumber, getRandomQuestion, setTimeOut]);
@@ -63,10 +56,10 @@ const Trivia = ({
     letsPlay();
   }, [letsPlay]);
 
-  const delay = (duration, callback) => {
-    setTimeout(() => {
-      callback();
-    }, duration);
+  const delay = async duration => {
+    return new Promise(resolve => {
+      setTimeout(resolve, duration);
+    });
   };
 
   const handleModalClose = () => {
@@ -74,61 +67,57 @@ const Trivia = ({
     // Ваша додаткова логіка при закритті модалки, якщо потрібна
   };
 
-  const handleClick = a => {
+  const handleClick = async a => {
     if (isQuestionDisplayed) {
       setSelectedAnswer(a);
       setClassName('answer active');
-      delay(3000, () => {
-        setClassName(a.correct ? 'answer correct' : 'answer wrong');
-      });
 
-      delay(5000, () => {
-        if (a.correct) {
-          correctAnswer();
-          delay(1000, () => {
-            if (questionNumber === data.length - 2) {
-              setQuestionNumber(data.length); // Це встановлює questionNumber на довжину даних, щоб показати останнє питання
-              setIsCongratulationsModalOpen(true); // Відкриваємо модалку на передостанньому питанні
-            } else if (isLastQuestion) {
-              onComplete();
-            } else {
-              setQuestionNumber(prev => prev + 1);
-            }
-          });
+      await delay(3000);
+      setClassName(a.correct ? 'answer correct' : 'answer wrong');
+
+      await delay(2000);
+
+      if (a.correct) {
+        correctAnswer();
+        await delay(1000);
+
+        if (questionNumber === data.length) {
+          setIsCongratulationsModalOpen(true);
+          onComplete();
         } else {
-          wrongAnswer();
-          delay(1000, () => {
-            setTimeOut(true);
-          });
+          setQuestionNumber(prev => prev + 1);
         }
-      });
+      } else {
+        wrongAnswer();
+        await delay(1000);
+        setTimeOut(true);
+      }
     }
   };
 
   return (
     <div className="trivia">
-      {isLastQuestion ? (
+      {isCongratulationsModalOpen && (
         <CongratulationsModal
-          isOpen={true}
+          isOpen={isCongratulationsModalOpen}
           earned="Ваш виграш"
           onRequestClose={handleModalClose}
         />
-      ) : (
-        <>
-          <div className="question">{question?.question}</div>
-          <div className="answers">
-            {question?.answers.map(a => (
-              <div
-                className={selectedAnswer === a ? className : 'answer'}
-                key={a.text}
-                onClick={() => handleClick(a)}
-              >
-                {a.text}
-              </div>
-            ))}
-          </div>
-        </>
       )}
+      <>
+        <div className="question">{question?.question}</div>
+        <div className="answers">
+          {question?.answers.map(a => (
+            <div
+              className={selectedAnswer === a ? className : 'answer'}
+              key={a.text}
+              onClick={() => handleClick(a)}
+            >
+              {a.text}
+            </div>
+          ))}
+        </div>
+      </>
     </div>
   );
 };

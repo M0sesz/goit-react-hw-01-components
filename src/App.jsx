@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Start from './components/Form';
 import Timer from './components/Timer';
 import Trivia from './components/Questions';
+import RestartButton from './components/RestrartGame';
 import axios from 'axios';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [earned, setEarned] = useState('₴ 0');
   const [questionsData, setQuestionsData] = useState(null);
   const [usedQuestionIds, setUsedQuestionIds] = useState([]);
+  const [restartGame, setRestartGame] = useState(false); // Новий стан для кнопки "Почати гру спочатку"
 
   const moneyPyramid = useMemo(
     () => [
@@ -104,7 +106,15 @@ function App() {
     } else {
       // End the game if answer is incorrect
       setTimeOut(true);
+      setRestartGame(true);
     }
+  };
+
+  const handleRestartGame = () => {
+    setQuestionNumber(1); // Скидаємо номер питання на початок
+    setUsedQuestionIds([]); // Очищаємо використані питання
+    setTimeOut(false); // Знову можна грати
+    setRestartGame(false); // Вимикаємо кнопку "Почати гру спочатку"
   };
 
   return (
@@ -115,7 +125,11 @@ function App() {
         <>
           <div className="main">
             {timeOut ? (
-              <h1 className="endText">Ви заробили: {earned}</h1>
+              <>
+                <h1 className="endText">Ви заробили: {earned}</h1>
+                {/* Додаємо кнопку "Почати гру спочатку" */}
+                <RestartButton onClick={handleRestartGame} />
+              </>
             ) : (
               <>
                 <div className="top">
