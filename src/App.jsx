@@ -4,6 +4,7 @@ import Start from './components/Form';
 import Timer from './components/Timer';
 import Trivia from './components/Questions';
 import RestartButton from './components/RestrartGame';
+
 import axios from 'axios';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
   const [earned, setEarned] = useState('₴ 0');
   const [questionsData, setQuestionsData] = useState(null);
   const [usedQuestionIds, setUsedQuestionIds] = useState([]);
-  const [restartGame, setRestartGame] = useState(false); // Новий стан для кнопки "Почати гру спочатку"
+  // eslint-disable-next-line no-unused-vars
+  const [restartGame, setRestartGame] = useState(false);
 
   const moneyPyramid = useMemo(
     () => [
@@ -43,13 +45,10 @@ function App() {
           'https://65638255ee04015769a750ec.mockapi.io/api/million/questions'
         );
 
-        // Filter out used questions
         const filteredQuestions = response.data.filter(question => {
-          // Check if question ID is not used
           return !usedQuestionIds.includes(question.id);
         });
 
-        // Shuffle and slice questions based on difficulty
         const easyQuestions = shuffleArray(
           filteredQuestions.filter(q => q.level === 'easy')
         ).slice(0, 5);
@@ -93,18 +92,13 @@ function App() {
   }, [questionNumber, moneyPyramid]);
 
   const handleQuestionAnswered = (questionId, selectedAnswer) => {
-    // Update used question IDs1
     setUsedQuestionIds(prevIds => [...prevIds, questionId]);
 
-    // Find the answered question object
     const answeredQuestion = questionsData.find(q => q.id === questionId);
 
-    // Check if the answer is correct
     if (selectedAnswer === answeredQuestion.correctAnswer) {
-      // Increase question number for next round
       setQuestionNumber(prev => prev + 1);
     } else {
-      // End the game if answer is incorrect
       setTimeOut(true);
       setRestartGame(true);
     }
@@ -127,7 +121,6 @@ function App() {
             {timeOut ? (
               <>
                 <h1 className="endText">Ви заробили: {earned}</h1>
-                {/* Додаємо кнопку "Почати гру спочатку" */}
                 <RestartButton onClick={handleRestartGame} />
               </>
             ) : (

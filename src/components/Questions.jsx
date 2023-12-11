@@ -5,7 +5,7 @@ import correct from '../sounds/correct.mp3';
 import wrong from '../sounds/wrong.mp3';
 import CongratulationsModal from './CongratulationsModal';
 
-const Trivia = ({
+const Questions = ({
   data,
   questionNumber,
   setQuestionNumber,
@@ -64,7 +64,6 @@ const Trivia = ({
 
   const handleModalClose = () => {
     setIsCongratulationsModalOpen(false);
-    // Ваша додаткова логіка при закритті модалки, якщо потрібна
   };
 
   const handleClick = async a => {
@@ -81,7 +80,7 @@ const Trivia = ({
         correctAnswer();
         await delay(1000);
 
-        if (questionNumber === data.length) {
+        if (questionNumber === 15) {
           setIsCongratulationsModalOpen(true);
           onComplete();
         } else {
@@ -122,4 +121,4 @@ const Trivia = ({
   );
 };
 
-export default Trivia;
+export default Questions;

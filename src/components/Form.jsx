@@ -11,17 +11,28 @@ export default function Start({ setUsername }) {
     const name = nameRef.current.value.trim();
     const age = ageRef.current.value.trim();
 
-    if (!name || !age) {
-      toast.error("Будь ласка, введіть ім'я та вік.");
-    } else {
-      setUsername({ name, age });
+    if (!name) {
+      toast.error("Будь ласка, введіть ім'я.");
+      return;
     }
+
+    if (!age) {
+      toast.error('Будь ласка, введіть вік.');
+      return;
+    }
+
+    if (isNaN(age) || age < 1 || age > 150) {
+      toast.error('Будь ласка, введіть коректний вік.');
+      return;
+    }
+
+    setUsername({ name, age });
   };
 
   return (
     <div className="full">
       <div className="start">
-        <img src={logoMillion} alt="My Image" className="logoStart" />
+        <img src={logoMillion} alt="" className="logoStart" />
         <input
           className="startInput"
           placeholder="Введіть ваше ім'я"
