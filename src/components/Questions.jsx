@@ -80,9 +80,12 @@ const Questions = ({
         correctAnswer();
         await delay(1000);
 
-        if (questionNumber === 15) {
+        if (questionNumber > 14) {
+          console.log('Opening Congratulations Modal');
+
           setIsCongratulationsModalOpen(true);
           onComplete();
+          setTimeOut(false);
         } else {
           setQuestionNumber(prev => prev + 1);
         }

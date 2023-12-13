@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-const CongratulationsModal = ({ isOpen, earned, onRequestClose }) => (
+const CongratulationsModal = ({ isOpen, onRequestClose }) => (
   <Modal
     isOpen={isOpen}
     onRequestClose={onRequestClose}
@@ -13,7 +13,10 @@ const CongratulationsModal = ({ isOpen, earned, onRequestClose }) => (
       content: {
         width: '900px',
         margin: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         borderRadius: '10px',
         padding: '20px',
         textAlign: 'center',
@@ -23,20 +26,19 @@ const CongratulationsModal = ({ isOpen, earned, onRequestClose }) => (
       },
     }}
   >
-    <h2>Вітаємо!</h2>
-    <p>
-      Ви завершили гру та відповіли на всі питання та заробили ₴ 1.000.000 !
+    <h2 style={{ fontSize: '32px', marginBottom: '20px' }}>Вітаємо!</h2>
+    <p style={{ fontSize: '18px', marginBottom: '50px' }}>
+      Ви завершили гру та відповіли на всі питання та заробили ₴ 1.000.000!
     </p>
     <button
       style={{
         padding: '10px',
-        margin: '10px',
         backgroundColor: '#00008b',
         color: 'white',
         border: 'none',
         borderRadius: '5px',
         cursor: 'pointer',
-        fontSize: '16px',
+        fontSize: '20px',
         fontWeight: 'bold',
       }}
       onClick={onRequestClose}

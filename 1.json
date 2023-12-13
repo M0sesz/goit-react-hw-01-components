@@ -98,11 +98,11 @@
     "answers": [
       {
         "text": "24",
-        "correct": false
+        "correct": true
       },
       {
         "text": "25",
-        "correct": true
+        "correct": false
       },
       {
         "text": "26",
@@ -416,7 +416,7 @@
   {
     "id": 20,
     "level": "easy",
-    "question": "Як називається великий океан між Азією та Америкою?",
+    "question": "Як називається  океан між Азією та Америкою?",
     "answers": [
       {
         "text": "Атлантичний",
@@ -938,6 +938,385 @@
       },
       {
         "text": "Елемент хімічного складу",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "level": "easy",
+    "question": "Яка найбільш поширена мова програмування?",
+    "answers": [
+      { "text": "Java", "correct": false },
+      { "text": "Python", "correct": true },
+      { "text": "C++", "correct": false },
+      { "text": "JavaScript", "correct": false }
+    ]
+  },
+  {
+    "id": 45,
+    "level": "hard",
+    "question": "Що таке Ефект Гальвані?",
+    "answers": [
+      {
+        "text": "Виникнення електричного струму в даний конкретний проміжок часу",
+        "correct": false
+      },
+      { "text": "Зневоднення металевих газів", "correct": false },
+      {
+        "text": "Вплив електричного струму на живий організм",
+        "correct": true
+      },
+      { "text": "Явище високої провідливості металів", "correct": false }
+    ]
+  },
+  {
+    "id": 46,
+    "level": "hard",
+    "question": "Коли вперше з'явилася персональна комп'ютерна миша?",
+    "answers": [
+      { "text": "1970 рік", "correct": false },
+      { "text": "1983 рік", "correct": true },
+      { "text": "1995 рік", "correct": false },
+      { "text": "2001 рік", "correct": false }
+    ]
+  },
+  {
+    "id": 47,
+    "level": "hard",
+    "question": "Що таке енциклопедія?",
+    "answers": [
+      { "text": "Видання з інформацією про звірі", "correct": false },
+      { "text": "Колекція картинок", "correct": false },
+      {
+        "text": "Книжкове видання з загальною інформацією з різних галузей знань",
+        "correct": true
+      },
+      { "text": "Словник іншомовних слів", "correct": false }
+    ]
+  },
+  {
+    "id": 48,
+    "level": "hard",
+    "question": "Що таке інтелектуальна власність?",
+    "answers": [
+      { "text": "Дохід від знань", "correct": false },
+      { "text": "Ліцензійні платежі", "correct": false },
+      {
+        "text": "Творчість людини, що виражена в її ідеях та винаходах",
+        "correct": true
+      },
+      { "text": "Патенти на продукцію", "correct": false }
+    ]
+  },
+  {
+    "id": 49,
+    "level": "medium",
+    "question": "Що таке ефект Доплера в астрофізиці?",
+    "answers": [
+      {
+        "text": "Зміна частоти хвиль при рухомому джерелі світла",
+        "correct": true
+      },
+      { "text": "Зміна колірності зір в астрономії", "correct": false },
+      { "text": "Повільний оберт Землі навколо своєї осі", "correct": false },
+      { "text": "Спостереження за рухом космічних об'єктів", "correct": false }
+    ]
+  },
+  {
+    "id": 50,
+    "level": "easy",
+    "question": "Який континент є найбільшим за площею?",
+    "answers": [
+      { "text": "Африка", "correct": false },
+      { "text": "Європа", "correct": false },
+      { "text": "Азія", "correct": true },
+      { "text": "Північна Америка", "correct": false }
+    ]
+  },
+  {
+    "id": 51,
+    "level": "easy",
+    "question": "Скільки планет в Сонячній системі?",
+    "answers": [
+      { "text": "7", "correct": false },
+      { "text": "8", "correct": true },
+      { "text": "9", "correct": false },
+      { "text": "10", "correct": false }
+    ]
+  },
+  {
+    "id": 52,
+    "level": "hard",
+    "question": "Яка річка є найдовшою у світі, і через які країни вона протікає?",
+    "answers": [
+      { "text": "Амазонка, Бразилія та Перу", "correct": false },
+      { "text": "Ніл, Єгипет та Судан", "correct": false },
+      { "text": "Янцзи, Китай", "correct": false },
+      { "text": "Нігер, Нігерія та Малі", "correct": true }
+    ]
+  },
+  {
+    "id": 53,
+    "level": "medium",
+    "question": "Скільки океанів на планеті Земля?",
+    "answers": [
+      { "text": "3", "correct": false },
+      { "text": "4", "correct": true },
+      { "text": "5", "correct": false },
+      { "text": "6", "correct": false }
+    ]
+  },
+  {
+    "id": 54,
+    "level": "medium",
+    "question": "Яка країна вважається батьківщиною футболу?",
+    "answers": [
+      { "text": "Бразилія", "correct": true },
+      { "text": "Аргентина", "correct": false },
+      { "text": "Іспанія", "correct": false },
+      { "text": "Італія", "correct": false }
+    ]
+  },
+  {
+    "id": 55,
+    "level": "easy",
+    "question": "Яке тваринне царство включає людину?",
+    "answers": [
+      { "text": "Тварини", "correct": false },
+      { "text": "Гриби", "correct": false },
+      { "text": "Прокаріоти", "correct": false },
+      { "text": "Хордові", "correct": true }
+    ]
+  },
+  {
+    "id": 56,
+    "level": "hard",
+    "question": "Яка найбільша пустеля в світі, і в якому регіоні вона розташована?",
+    "answers": [
+      { "text": "Сахара, Африка", "correct": false },
+      { "text": "Атакама, Південна Америка", "correct": false },
+      { "text": "Гобі, Азія", "correct": false },
+      { "text": "Антарктида", "correct": true }
+    ]
+  },
+  {
+    "id": 57,
+    "level": "medium",
+    "question": "Яке найбільше острівне держава в світі?",
+    "answers": [
+      { "text": "Індонезія", "correct": true },
+      { "text": "Філіппіни", "correct": false },
+      { "text": "Японія", "correct": false },
+      { "text": "Нова Зеландія", "correct": false }
+    ]
+  },
+  {
+    "id": 58,
+    "level": "easy",
+    "question": "Що означає абревіатура NASA?",
+    "answers": [
+      {
+        "text": "National Aeronautics and Space Administration",
+        "correct": true
+      },
+      { "text": "North American Space Association", "correct": false },
+      { "text": "New Age Space Agency", "correct": false },
+      { "text": "Nordic Aeronautics and Science Association", "correct": false }
+    ]
+  },
+  {
+    "id": 59,
+    "level": "hard",
+    "question": "Які три океани зустрічаються на південному заході Австралії?",
+    "answers": [
+      { "text": "Тихий, Індійський, Південний", "correct": false },
+      { "text": "Атлантичний, Індійський, Південний", "correct": false },
+      { "text": "Тихий, Південний, Антарктичний", "correct": true },
+      { "text": "Тихий, Атлантичний, Північний", "correct": false }
+    ]
+  },
+  {
+    "id": 60,
+    "level": "hard",
+    "question": "Яка найвища гора в системі Сонячної системи, а не лише на Землі?",
+    "answers": [
+      { "text": "Еверест", "correct": false },
+      { "text": "Мауна Кеа", "correct": false },
+      { "text": "Олімп", "correct": true },
+      { "text": "Кантім'юйн", "correct": false }
+    ]
+  },
+  {
+    "id": 61,
+    "level": "hard",
+    "question": "Що таке Docker і в яких випадках воно використовується?",
+    "answers": [
+      {
+        "text": "Мова програмування для розробки веб-додатків",
+        "correct": false
+      },
+      {
+        "text": "Інструмент для автоматизації розгортання та управління контейнерами",
+        "correct": true
+      },
+      { "text": "Інтерфейс для роботи з базами даних", "correct": false },
+      { "text": "Фреймворк для розробки штучного інтелекту", "correct": false }
+    ]
+  },
+  {
+    "id": 62,
+    "level": "easy",
+    "question": "Що означає скорочення HTML в контексті веб-розробки?",
+    "answers": [
+      { "text": "Hypertext Markup Language", "correct": true },
+      { "text": "Hyperlink and Text Markup Language", "correct": false },
+      { "text": "High-Level Text Management Language", "correct": false },
+      { "text": "Hyper Transfer and Multimedia Language", "correct": false }
+    ]
+  },
+  {
+    "id": 63,
+    "level": "medium",
+    "question": "Що таке алгоритм сортування 'QuickSort', і в чому полягає його ефективність?",
+    "answers": [
+      { "text": "Алгоритм для шифрування даних", "correct": false },
+      {
+        "text": "Алгоритм сортування з використанням рекурсії, ефективний у випадку великої кількості елементів",
+        "correct": true
+      },
+      { "text": "Алгоритм для стиснення зображень", "correct": false },
+      { "text": "Алгоритм для генерації випадкових чисел", "correct": false }
+    ]
+  },
+  {
+    "id": 64,
+    "level": "hard",
+    "question": "Що таке XSS (Cross-Site Scripting) і як ви можете захистити веб-додаток від цього типу атаки?",
+    "answers": [
+      { "text": "Це мова програмування для розробки ігор", "correct": false },
+      { "text": "Це алгоритм шифрування паролів", "correct": false },
+      {
+        "text": "Це тип атаки, при якій атакуючий вставляє веб-сторінці власний код, використовуючи вразливості на стороні клієнта",
+        "correct": true
+      },
+      {
+        "text": "Це платформа для роботи з віртуальною реальністю",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "level": "medium",
+    "question": "Що таке RESTful API, і які принципи лежать в його основі?",
+    "answers": [
+      {
+        "text": "Це мова програмування для роботи з базами даних",
+        "correct": false
+      },
+      {
+        "text": "Це архітектурний стиль для створення веб-служб, базований на принципах ресурсів та CRUD операцій",
+        "correct": true
+      },
+      {
+        "text": "Це відділення додатка на серверну та клієнтську частини",
+        "correct": false
+      },
+      {
+        "text": "Це тип атаки на веб-додаток, спрямований на отримання несанкціонованого доступу",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "level": "hard",
+    "question": "Що таке блокчейн та які переваги він може надати в сфері фінансів?",
+    "answers": [
+      {
+        "text": "Це тип алгоритму сортування для великих наборів даних",
+        "correct": false
+      },
+      {
+        "text": "Це архітектурний підхід для розробки масштабованих веб-додатків",
+        "correct": false
+      },
+      {
+        "text": "Це розподілена база даних, яка забезпечує безпеку та невідмінність даних через цифровий підпис",
+        "correct": true
+      },
+      {
+        "text": "Це мова програмування для створення інтелектуальних агентів",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "level": "medium",
+    "question": "Що означає термін 'Open Source' у світі програмного забезпечення?",
+    "answers": [
+      {
+        "text": "Це означає, що програма відкрита для редагування лише в межах компанії-розробника",
+        "correct": false
+      },
+      {
+        "text": "Це відкритий вихідний код програми, доступний для редагування і перевикористання",
+        "correct": true
+      },
+      {
+        "text": "Це тип алгоритму сортування для великих наборів даних",
+        "correct": false
+      },
+      {
+        "text": "Це відкритий доступ до веб-ресурсу для використання API",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "level": "medium",
+    "question": "Що таке 'Scrum' у розробці програмного забезпечення, і які основні ролі в цьому процесі?",
+    "answers": [
+      {
+        "text": "Це стиль програмування, який використовує об'єктно-орієнтовані підходи",
+        "correct": false
+      },
+      {
+        "text": "Це методологія розробки, яка базується на ітеративних циклах та використанні крос-функціональних команд",
+        "correct": true
+      },
+      {
+        "text": "Це алгоритм сортування для обробки великих наборів даних",
+        "correct": false
+      },
+      {
+        "text": "Це підхід до тестування програмного забезпечення",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "level": "hard",
+    "question": "Що таке 'DevOps' і як він сприяє вдосконаленню процесів розробки та впровадження програмного забезпечення?",
+    "answers": [
+      {
+        "text": "Це методологія управління проектами, що акцентує на створенні документації",
+        "correct": false
+      },
+      {
+        "text": "Це підхід до розробки, який використовує віртуалізацію для полегшення розгортання додатків",
+        "correct": false
+      },
+      {
+        "text": "Це практика, яка об'єднує розробників та інженерів з метою поліпшення ефективності інтеграції та впровадження програмного забезпечення",
+        "correct": true
+      },
+      {
+        "text": "Це підход до розробки, який базується на плануванні поетапного впровадження функціональностей",
         "correct": false
       }
     ]
