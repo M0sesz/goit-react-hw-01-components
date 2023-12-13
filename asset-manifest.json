@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/millionair/static/css/main.1f3d69b6.css",
-    "main.js": "/millionair/static/js/main.ff9c41f8.js",
+    "main.js": "/millionair/static/js/main.d4385d76.js",
     "static/js/845.0ba1d6b0.chunk.js": "/millionair/static/js/845.0ba1d6b0.chunk.js",
     "static/media/12345.png": "/millionair/static/media/12345.b5da5f516046c8bae367.png",
     "static/media/play.mp3": "/millionair/static/media/play.8e5f6d1d81d4e1414b95.mp3",
@@ -11,11 +11,11 @@
     "static/media/bgstart.jpg": "/millionair/static/media/bgstart.9de3097bac61a40b125f.jpg",
     "index.html": "/millionair/index.html",
     "main.1f3d69b6.css.map": "/millionair/static/css/main.1f3d69b6.css.map",
-    "main.ff9c41f8.js.map": "/millionair/static/js/main.ff9c41f8.js.map",
+    "main.d4385d76.js.map": "/millionair/static/js/main.d4385d76.js.map",
     "845.0ba1d6b0.chunk.js.map": "/millionair/static/js/845.0ba1d6b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1f3d69b6.css",
-    "static/js/main.ff9c41f8.js"
+    "static/js/main.d4385d76.js"
   ]
 }
